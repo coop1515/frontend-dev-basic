@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {padding: 0; margin: 0;}
+body {
+	font-family:"맑은 고딕", "돋움";
+	font-size: 0.75em;
+}
+
+form{
+	width:150px;
+	border: 1px solid #555;
+	padding: 50px;
+	margin: 30px auto 50px auto; 	
+}
+
+input {
+	padding: 5px;
+	border: 2px solid #C0E0FF;
+	outline: none;
+}
+</style>
+<script>
+function focused(e) {
+	// console.log("focused" + e);
+	// e.style.borderStyle
+	e.className = "focused";
+}
+
+function blured(e){
+	e.className = "";
+}
+</script>
+</head>
+<body>
+	<form>
+	<input
+	 type="text"
+	 id="user-id"
+	 value=""
+	 placeholder="이메일"
+	 onfocus='focused(this);'
+	 onblur='blured(this);'/>
+	<br/><br/>
+	<input
+	class="focused"
+	type="password"
+	value=""
+	placeholder="비밀번호"
+	onfocus='focused(this);'
+	onblur='console.log("blur2" + this);'
+	/>
+	</form>
+</body>
+</html>
