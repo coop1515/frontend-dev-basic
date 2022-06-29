@@ -36,27 +36,39 @@ ul, ol { list-style-type: none;}
 }
 </style>
 <script>
-// DOM Event Model1 Level0: Inline: HTML Tag에 바로 적용하기
+// DOM Event Model1 Level0: basic: HTML Element의 Event Attribute에 
+// Event Handler(함수)를 설정하는 방식 
+// JavaScript Code(DOM API)로만 작성하기. 
 var liSelected = null; 
-function onTabClicked(el) {
+function onTabClicked() {
+	// console.log(this);
 	if(liSelected != null){
 		liSelected.className = '';
 	}
 	
 	// select
-	el.className = 'selected';
-	liSelected = el;
+	this.className = 'selected';
+	liSelected = this;
 }
+
+window.onload = function() {
+	document.getElementById("tab01").onclick = onTabClicked;
+	document.getElementById("tab02").onclick = onTabClicked;
+	document.getElementById("tab03").onclick = onTabClicked;
+	document.getElementById("tab04").onclick = onTabClicked;
+	document.getElementById("tab05").onclick = onTabClicked;
+}
+
 </script>
 </head>
 <body>
 <div class="tab-box">
 	<ul>
-        <li onclick='onTabClicked(this)'>메뉴 5</li>
-        <li onclick='onTabClicked(this)'>메뉴 4</li>
-        <li onclick='onTabClicked(this)'>메뉴 3</li>
-        <li onclick='onTabClicked(this)'>메뉴 2</li>
-        <li onclick='onTabClicked(this)'>메뉴 1</li>
+        <li id="tab01">메뉴 5</li>
+        <li id="tab02">메뉴 4</li>
+        <li id="tab03">메뉴 3</li>
+        <li id="tab04">메뉴 2</li>
+        <li id="tab05">메뉴 1</li>
     </ul>
     <div>
     	탭뷰입니다.
