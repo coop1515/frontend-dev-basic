@@ -46,8 +46,8 @@ a5['1'] = 1;
 a5.name = '둘리';
 a5['age'] = 10;
 console.log(a5['0'], a5[1], a5.length, a5["name"], a5.age);
-for(prop in o5){
-    console.log(prop, o5[prop]);
+for(prop in a5){
+    console.log(prop, a5[prop]);
 }
 
 o5 = {};
