@@ -1,37 +1,23 @@
 /**
- * Date 객체 메소드(Date.prototype.*)
+ * 함수: function 타입의 객체
  * 
  */
 
-// 현재 시간
-var now = new Date();
-console.log(now);
+// 함수를 생성하는 방법1: 함수 리터럴
+function f1(a, b) {
+    return a + b;
+}
+console.log(typeof(f1), f1(10, 20));
 
-// 2022년 2월22일
-var d1 = new Date(2022, 1/* month-1 */, 22);
-console.log(d1);
+// 함수를 생성하는 방법2: 함수 리터럴(추천)
+var f2 = function(a, b) {
+    return a + b;
+}
+console.log(typeof(f2), f2(10, 20));
 
-// 2022년 2월22일 22:22:22
-var d2 = new Date(2022, 1, 22, 22, 22, 22);
-console.log(d2);
-
-// 객체 함수
-console.log(
-    "년:" + now.getFullYear() + "\n" +
-    "월:" + (now.getMonth() + 1) + "\n" +
-    "일:" + now.getDate() + "\n" +
-    "시:" + now.getHours() + "\n" +
-    "분:" + now.getMinutes() + "\n" +
-    "초:" + now.getSeconds() + "\n" +
-    "밀리초:" + now.getMilliseconds()
-);
-
-d2.setFullYear(2024);
-console.log(d2);
-
-d2.setMonth(11);  // 0부터 시작이라 11이 12월 
-console.log(d2);
-
+// 함수를 생성하는 방법3: new 연산자와 함께 생성자 함수를 사용하는 방법
+var f3 = new Function("a", "b", "return a + b;");
+console.log(typeof(f3), f3(10, 20));
 
 //함수를 생성하는 방법4: 익명(anonymous) 함수 : callback
 setTimeout(function(){
