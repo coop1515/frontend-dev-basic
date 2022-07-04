@@ -1,4 +1,6 @@
 var BrowserDetect = {
+		// browser: null, 
+		// version: null, 동적으로 세팅이 되기 때문에 굳이 안해도 됨.
 		init: function () {
 			this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
 			this.version = this.searchVersion(navigator.userAgent)
