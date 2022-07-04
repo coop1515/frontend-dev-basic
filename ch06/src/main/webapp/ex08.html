@@ -3,9 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement("img");
+	imgElement.src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MTBfMTgz%2FMDAxNjQ5NTE4OTUxNjAx.sWa4WKNBtwVqs1XsgVUTZrilRd7VwddNZI1NE4aRT3Yg.NkQ6qBly-ObHSO2_JWLwTaq-VzDjhMvwqqad9MA5d6wg.JPEG.dbsk_n_c%2FScreenshot%25A3%25DF20220410%25A3%25AD003736%25A3%25DFYouTube.jpg&type=a340"
+	imgElement.style.width = "200px";
+	imgElement.alt = '보노보노';
+	imgElement.title = '보노보노 기침';
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+	}, 2000);
+})
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
 	<h2>3. HTML Element 속성 조작하기1</h2>
+	
 </body>
 </html>

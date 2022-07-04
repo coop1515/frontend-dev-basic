@@ -3,9 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement("img");
+	/* 
+	imgElement.src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MTBfMTgz%2FMDAxNjQ5NTE4OTUxNjAx.sWa4WKNBtwVqs1XsgVUTZrilRd7VwddNZI1NE4aRT3Yg.NkQ6qBly-ObHSO2_JWLwTaq-VzDjhMvwqqad9MA5d6wg.JPEG.dbsk_n_c%2FScreenshot%25A3%25DF20220410%25A3%25AD003736%25A3%25DFYouTube.jpg&type=a340"
+	imgElement.style.width = "200px";
+	imgElement.alt = '보노보노';
+	imgElement.title = '보노보노 기침';
+	*/
+	
+	// setAttribute
+	// 표준 Attribute => property (o)
+	imgElement.setAttribute("src", "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MTBfMTgz%2FMDAxNjQ5NTE4OTUxNjAx.sWa4WKNBtwVqs1XsgVUTZrilRd7VwddNZI1NE4aRT3Yg.NkQ6qBly-ObHSO2_JWLwTaq-VzDjhMvwqqad9MA5d6wg.JPEG.dbsk_n_c%2FScreenshot%25A3%25DF20220410%25A3%25AD003736%25A3%25DFYouTube.jpg&type=a340");
+	imgElement.setAttribute("style" , "width: 200px");
+	imgElement.setAttribute("alt", "보노보노");
+	// imgElement.setAttribute("title", "보노보노 기침");
+	
+	// property => 표준 Attribute (o)
+	imgElement['title'] = '보노보노 기침';
+	
+	// property => 비표준 Attribute (x)
+	imgElement['no'] = 10; // property
+	
+	// 왜 property가 되지 않을까...
+	imgElement.setAttribute('data-no',10); // 비표준 attribute, property(x) 
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+		console.log(imgElement['no'], imgElement.getAttribute("no"));
+		console.log(imgElement.alt, imgElement['data-no'], imgElement.getAttribute("data-no"));
+	}, 2000);
+})
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
 	<h2>3. HTML Element 속성 조작하기2</h2>
+	<img data-no='10'>
 </body>
 </html>
