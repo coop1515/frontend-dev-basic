@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
 	imgElement['name'] = 10; // 
 	// property => 비표준 Attribute (x)
 	imgElement['no'] = 10; // property
-
+	imgElement['no2'] = 10; // 비표준 속성은 사용할 때 prefix 'data-'를 달아 'data-no2'로 사용한다.
 	
 	// 왜 property가 되지 않을까...
 	imgElement.setAttribute('data-no',10); // 비표준 attribute, property(x) 
@@ -38,6 +38,7 @@ window.addEventListener("load", function(){
 		console.log(imgElement['no'], imgElement.getAttribute("no"));
 		console.log(imgElement.alt, imgElement['data-no'], imgElement.getAttribute("data-no"));
 		console.log(imgElement.no, imgElement.getAttribute("name"),imgElement.getAttribute("title"));
+		console.log(imgElement.getAttribute("no2"), imgElement.getAttribute("title"));
 	}, 2000);
 })
 </script>
