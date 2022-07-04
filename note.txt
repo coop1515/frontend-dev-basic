@@ -1,0 +1,6 @@
+Borwser Programming 1
+--- DOM
+--- BOM				API (Native Programming, Pure JavaScript, Vanila Script)
+--- XMLHttpRequest
+									JS Library(jQuery)
+									
