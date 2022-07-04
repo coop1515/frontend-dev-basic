@@ -3,6 +3,24 @@
 <head>
 <meta charset="UTF-8">
 	<title>Insert title here</title>
+<script>
+// 현재 모니터의 width, height 구하기
+var widthScreen = screen.width;
+var heightScreen = screen.height;
+
+console.log(widthScreen + " x " + heightScreen + " y ")
+
+var child = window.open("","","width=200. height = 100");
+setTimeout(function(){
+	child.moveTo(0,0);
+	child.resizeTo(widthScreen, heightScreen); // 지정해준 사이즈로 늘리는것
+	setInterval(function(){
+		// 0.1초 간격으로 강누데를 기준으로 사이즈 줄이기
+		child.resizeBy(-20, -20); // 현재 사이즈에서 줄이는 것.
+		child.moveBy(10,10); // 현재 위치에서 옮기는 것.
+	}, 100);
+}, 2000);
+</script>
 </head>
 <body>
 	<h1>BOM(Browser Object Model)</h1>

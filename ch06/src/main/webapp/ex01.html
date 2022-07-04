@@ -2,6 +2,36 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+<script>
+var number = 10;
+console.log(number, window,number);
+
+for(prop in window){
+	console.log(prop + ": " + window[prop]);
+}
+
+// 팝업창
+setTimeout(function(){
+	var popup = window.open("popup.html", "popup", "Width=600", "height=400");
+	setTimeout(function(){
+		// popup(자식창의 window객체)의 내용 바꾸기
+		// 보안 문제(Cross Domain) 때문에 부모와 같은 도메인에서만 가능하다.
+		popup.document.write("<h1>popup text changed</h1>")
+	}, 2000);
+	
+	setTimeout(function(){
+		// 2. popup(자식창의 window객체)의 이동
+		popup.moveTo(200, 200);
+	}, 4000);
+	
+	setTimeout(function(){
+		// 3. popup(자식창의 window객체)의 JavaScript Code 실행
+		popup.message();
+	}, 6000);
+	
+	
+}, 2000)
+</script>
 </head>
 <body>
 <body>
