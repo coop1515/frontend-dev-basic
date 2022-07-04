@@ -14,17 +14,21 @@ window.addEventListener("load", function(){
 	*/
 	
 	// setAttribute
-	// 표준 Attribute => property (o)
+	// 표준 Attribute => property (o), 비표준 Attribute => property (x)를 읽기/쓰기 위해서
+	// getAttribute/setAttribute
 	imgElement.setAttribute("src", "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MTBfMTgz%2FMDAxNjQ5NTE4OTUxNjAx.sWa4WKNBtwVqs1XsgVUTZrilRd7VwddNZI1NE4aRT3Yg.NkQ6qBly-ObHSO2_JWLwTaq-VzDjhMvwqqad9MA5d6wg.JPEG.dbsk_n_c%2FScreenshot%25A3%25DF20220410%25A3%25AD003736%25A3%25DFYouTube.jpg&type=a340");
 	imgElement.setAttribute("style" , "width: 200px");
 	imgElement.setAttribute("alt", "보노보노");
 	// imgElement.setAttribute("title", "보노보노 기침");
+	imgElement.setAttribute("no", 10); // 비표준 속성은 사용할 때 prefix 'data-no1'를 달아준다. data-no
+	
 	
 	// property => 표준 Attribute (o)
 	imgElement['title'] = '보노보노 기침';
-	
+	imgElement['name'] = 10; // 
 	// property => 비표준 Attribute (x)
 	imgElement['no'] = 10; // property
+
 	
 	// 왜 property가 되지 않을까...
 	imgElement.setAttribute('data-no',10); // 비표준 attribute, property(x) 
@@ -33,6 +37,7 @@ window.addEventListener("load", function(){
 		document.body.appendChild(imgElement);
 		console.log(imgElement['no'], imgElement.getAttribute("no"));
 		console.log(imgElement.alt, imgElement['data-no'], imgElement.getAttribute("data-no"));
+		console.log(imgElement.no, imgElement.getAttribute("name"),imgElement.getAttribute("title"));
 	}, 2000);
 })
 </script>
