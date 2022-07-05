@@ -38,3 +38,19 @@ var toQueryString = function(o) {
 
 var url5 = url + "?" + toQueryString(params)
 console.log(url5);
+
+f = function() {
+    console.log("!!!");
+}
+
+/**
+ * var jQuery = function() {......}
+ * var $ = jQuery;
+ * 
+ * 
+ * $.ajax({
+ *  url: "",
+ *  type: "post",
+ *  data: toQueryString(params)
+ *  });
+ */
