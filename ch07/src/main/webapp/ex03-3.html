@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+$(function() {
+	var $obj = $(".par");
+	console.log($obj.length); //2
+	
+	
+	
+	
+	// 반한되는 jQuery Object는 절대 null이거나 undefined가 될 수 없다.
+	//var $obj = $("#none"); // none이란 id가 존재하지 않음.
+	//console.log($obj !== null, $obj !== undefined );
+	
+	// 반한되는jQuery Object는 유사 배열이다.
+	//var $obj = $("ul li");
+	//console.log($obj.length, $obj[0], $obj instanceof Array);
+});
+</script>
+</head>
+<body>
+	<h1 id="header">Simple jQuery 만들기3</h1>
+	
+	<p class='par'>문장1</p>
+	<p>문장2</p>
+	<p  class='par'>문장3</p>
+	<p>문장4</p>
+</body>
+</html>
+ 
