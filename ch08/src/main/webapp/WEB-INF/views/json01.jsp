@@ -12,16 +12,22 @@
 $(function(){
 	$("button").click(function(){
 		$.ajax({
-			url:"/ch08/api/json",
+			url:"${pageContext.request.contextPath}/api/json",
 			async: true, // 기본적으로 true라서 선언 안해줘도 됨.
 			type: "get",
 			dataType: "json",
 			success: function(response){
 				// console.log(response);
+				if(response.result === 'fail'){
+					console.error(response.message);
+					return;
+				}
+				
+				var vo = response.data;
 				var htmls = "";
-				htmls += ("<h3>"+ response.no + "</h3>");
-				htmls += ("<h4>"+ response.name + "</h4>");
-				htmls += ("<h5>"+ response.message + "</h5>");
+				htmls += ("<h3>"+ vo.no + "</h3>");
+				htmls += ("<h4>"+ vo.name + "</h4>");
+				htmls += ("<h5>"+ vo.message + "</h5>");
 				
 				$("#data").html(htmls);
 			},
