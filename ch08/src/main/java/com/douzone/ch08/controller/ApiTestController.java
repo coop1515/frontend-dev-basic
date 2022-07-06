@@ -12,12 +12,12 @@ public class ApiTestController {
 		return "text";
 	}
 	
-	@RequestMapping("/text")
+	@RequestMapping("/html")
 	public String html() {
 		return "html";
 	}
 	
-	@RequestMapping("/text")
+	@RequestMapping("/json01")
 	public String json01() {
 		return "json01";
 	}
