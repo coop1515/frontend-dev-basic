@@ -9,7 +9,54 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
-
+var render = function(vo, mode){
+	// var vo = response.data;
+	var htmls = 
+		"<li data-no=''>" +
+		"<string>"+ vo.name +"</strong>"+
+		"<p>"+ vo.message+"</p>"+
+		"<strong></strong>" +
+		"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
+		"</li>";		
+		
+		if(mode){
+			$("#list-guestbook").append(htmls)	
+		} else{
+			$("#list-guestbook").prepend(htmls)
+		} 
+		
+}
+$(function(){
+	$("#add-form").submit(function(event){
+		event.preventDefault();
+		
+		// validation은 mysite03 join 참고
+		
+		var vo = {};
+		vo.name = $("#input-name").val();
+		vo.password = $("#input-password").val();
+		vo.message = $("#tx-content").val();
+		
+		console.log(vo);
+		
+		$.ajax({
+			url: "/ch08/api/guestbook",
+			type:"post",
+			dataType: "json",
+			contentType: "application/json",
+			data: JSON.stringify(vo),
+			success: function(response){
+				console.log(response);
+				if(response.result !== 'success'){
+					console.error(response.message);
+					return;
+				}
+				render(response.data);
+			}
+		});
+		
+	});
+})
 </script>
 </head>
 <body>
