@@ -1,3 +1,3 @@
-const mod01 = reqeuire('./error-ex01');
+const mod01 = require('./error-mod01');
 
 console.log(mod01);
