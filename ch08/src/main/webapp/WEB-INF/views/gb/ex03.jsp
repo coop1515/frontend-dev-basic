@@ -8,12 +8,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-/* 
-1. scroll event는 ch07/ex36.html 참고
-2. /api/guestbook?sno=10: sno 보다 작은 row를 top-k(limit 0, k) 구현 할 것.
 
-*/
 var render = function(vo, mode){
 	var htmls = 
 		"<li data-no='"+vo.no+"'>" +
@@ -23,12 +21,8 @@ var render = function(vo, mode){
 		"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
 		"</li>";		
 		
-	//if(mode){
-	//	$("#list-guestbook").append(htmls)	
-	//} else{
-	//	$("#list-guestbook").prepend(htmls)
-	//}
 	$("#list-guestbook")[mode ? "append" : "prepend"](htmls);
+	
 }
 
 var fetch = function(){
@@ -50,6 +44,31 @@ var fetch = function(){
 	});
 }
 $(function(){
+	// 삭제 다이얼로그 객체를 미리 만들기
+	var dialogDelete = $('#dialog-delete-form').dialog({
+		autoOpen: false,
+		modal: true,
+		buttons: {
+			"삭제": function(){
+				console.log("AJAX 삭제 하기");
+			},
+			"취소": function(){
+				$(this).dialog('close');	
+			}	
+		},
+		close: function() {
+			console.log("close!!!!");
+		}
+	})
+	// 글 삭제 버튼 Click 이벤트 처리 (Live Event)
+	$(document).on('click','#list-guestbook li a',function(event){
+		event.preventDefault();
+		
+		// console.log($(this).data('no'));
+		$("#hidden-no").val($(this).data('no'));
+		dialogDelete.dialog('open');
+	});
+	// ...
 	fetch();
 });
 </script>
@@ -65,6 +84,15 @@ $(function(){
 				</form>
 				<ul id="list-guestbook">
 				</ul>
+			</div>
+			<div id="dialog-delete-form" title="메세지 삭제" style="display:none">
+  				<p class="validateTips normal">작성시 입력했던 비밀번호를 입력하세요.</p>
+  				<p class="validateTips error" style="display:none">비밀번호가 틀립니다.</p>
+  				<form>
+ 					<input type="password" id="password-delete" value="" class="text ui-widget-content ui-corner-all">
+					<input type="hidden" id="hidden-no" value="">
+					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+  				</form>
 			</div>
 </body>
 </html>

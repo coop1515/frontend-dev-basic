@@ -3,6 +3,7 @@ package com.douzone.ch08.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,5 +51,11 @@ public class GuestBookController {
 		list.add(vo3);
 		
 		return JSONResult.success(list);
+	}
+	
+	@DeleteMapping("")
+	public JSONResult ex03(Long no, String password) {
+		// guestBookService.deleteMessage(no, password);
+		return JSONResult.success(no);
 	}
 }

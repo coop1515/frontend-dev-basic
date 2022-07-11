@@ -12,7 +12,7 @@
 var render = function(vo, mode){
 	// var vo = response.data;
 	var htmls = 
-		"<li data-no=''>" +
+		"<li data-no='"+vo.no+"'>" +
 		"<string>"+ vo.name +"</strong>"+
 		"<p>"+ vo.message+"</p>"+
 		"<strong></strong>" +

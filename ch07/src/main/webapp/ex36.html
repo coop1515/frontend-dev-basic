@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
+<script>
+$(function() {
+	$(window).scroll(function(){
+		var $window = $(this);
+		var $document = $(document);
+		
+		var windowHeight = $window.height(); // == $(this);
+		var documentHeight = $document.height();
+		var scrollTop = $window.scrollTop();
+		
+		if(documentHeight > windowHeight + scrollTop + 10){
+			console.log("fetch() call");
+		}
+	})
+});  
+</script>
+</head>
+<body>
+	<h1>DOM Event - scroll(timeline ui, infinite scrolling)</h1>
+
+	<ul>
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>지나가다가</strong>
+			<p>
+				별루입니다.<br> 비번:1234 -,.-
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>둘리</strong>
+			<p>
+				안녕하세요<br> 홈페이지가 개 굿 입니다.
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+
+		<li data-no=''><strong>주인</strong>
+			<p>
+				아작스 방명록 입니다.<br> 테스트~
+			</p> <strong></strong> <a href='' data-no=''>삭제</a></li>
+	</ul>
+
+</body>
+</html>
