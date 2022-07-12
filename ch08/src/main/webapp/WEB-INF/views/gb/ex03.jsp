@@ -19,10 +19,9 @@ var render = function(vo, mode){
 		"<p>"+ vo.message+"</p>"+
 		"<strong></strong>" +
 		"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
-		"</li>";		
+		"</li>";
 		
 	$("#list-guestbook")[mode ? "append" : "prepend"](htmls);
-	
 }
 
 var fetch = function(){
