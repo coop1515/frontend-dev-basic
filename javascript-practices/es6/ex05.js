@@ -39,9 +39,10 @@ const o = {
     name: '둘리',
     friends: ['또치','마이콜','도우너','길동'],
     printFriends: function(){
-        this.friends.forEach(function(f){
-            console.log(`${this.name}의 친구 ${f}`);
-        }.bind(this));
+        // this.friends.forEach(function(f){
+        //     console.log(`${this.name}의 친구 ${f}`);
+        // }.bind(this));
+        this.friends.forEach((f) => console.log(`${this.name}의 친구 ${f}`));
     }
 };
 

@@ -15,9 +15,9 @@ try{
 // 2. 대입(Assignment) 에러
 try{
     const o = {};
-    o.name = '둘리'; // 이건 에러가 아님.
+    o.name = '둘리'; // 이건 에러가 아님. 가능한 문법
 
-    // o = 10;
+    o = 10; // 여기서 에러가 남.
 
     console.log(o);
 } catch(e){

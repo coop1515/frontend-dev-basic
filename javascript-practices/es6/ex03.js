@@ -15,4 +15,4 @@ console.log(`no:${no}, name: ${name}, email: ${email}`);
 console.log("no:" + no + "\nname: " + name + "\nemail:"+ email);
 console.log(`no:${no}
 name: ${name}
- email: ${email}`);
+ email: ${email}`); // 매우 직관적 보이는 그대로 출력이 됨.
