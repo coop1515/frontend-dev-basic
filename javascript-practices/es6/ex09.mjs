@@ -14,6 +14,20 @@ console.log(myArith.subtract(10,20));
 import * as m from './ex09.03.mjs';
 console.log(m.add(10,20));
 
-// import destructing
+// import destructing 1
 import {subtract} from './ex09.03.mjs';
 console.log(subtract(10,20));
+
+// 04
+// import destructing 2
+import {add} from './ex09.04.mjs';
+console.log(add(10,20));
+
+// 05
+import math from './ex09.05.mjs'; 
+// import math, {add,subtract} from './ex09.05.mjs';
+import * as math2 from './ex09.05.mjs';
+console.log(math.divide(4,2));
+console.log(math.multiply(4,2));
+console.log(math2.add(4,2));
+console.log(math2.subtract(4,2));

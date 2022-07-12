@@ -6,10 +6,16 @@
  * 
  */
 
-export const add = function(a,b){
+const _a = function(a,b){
     return a + b;
 }
 
-export const subtract = function(a,b){
+const add = function(a,b){
+    return _a(a, b);
+}
+
+const subtract = function(a,b){
     return a - b;
 }
+
+export {add,subtract};
