@@ -7,18 +7,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="${pageContext.request.contextPath}/jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
 	$("#create").click(function(){
 		var vo = {
-			name: "둘리",
-			email: "dooly@gmail.com",
-			password: "1234",
-			gender: "male"
+			sender: "fdsf",
+			context: "핳하"
 		};
 		
 		$.ajax({
-			url: "${pageContext.request.contextPath }/api/user",
+			url: "http://192.168.10.10:8080/api/chat",
 			type: "post",
 			dataType: "json",
 			contentType: "application/json",
@@ -59,24 +58,36 @@ $(function(){
 		});
 	});
 	
+	$("#delete").click(function(){
+		$.ajax({
+			url: "${pageContext.request.contextPath }/api/user/10",
+			type: "delete",
+			dataType: "json",
+			contentType: "application/x-www-form-urlencoded",
+			data: "password=1234",
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});
 	
 });
 </script>
 </head>
 <body>
 	<h1>AJAX Test: Restful API</h1>
-
+	
 	<button id="create">Create(POST)</button>
 	<br/><br/>
 
 	<button id="read">Read(GET)</button>
 	<br/><br/>
-
+	
 	<button id="update">Update(PUT)</button>
 	<br/><br/>
-
+	
 	<button id="delete">Delete(DELETE)</button>
 	<br/><br/>
-
+	
 </body>
-</html> 
+</html>
