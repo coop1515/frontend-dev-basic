@@ -18,11 +18,19 @@ setTimeout(function(){
 
 // test01: success
 fetch('param-data',function(error, data){
-    
+    if(error){
+        console.error(error);
+        return;
+    }
     console.log(data);
+    asyncFunction("",function(error,data){
+        setInterval({
+
+        }, 2000)
+    })
 });
 
-// test01: fail
+// test02: fail
 fetch('param-error',function(error, data){
     if(error){
         console.error(error);
